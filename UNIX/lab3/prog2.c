@@ -23,8 +23,7 @@
 
 void testing()
 {
-  char *s = (char*)malloc(RAND_STR_SIZE*sizeof(char*));
-  s = "main";
+  const char* s = "main";
   char *k = (char*)malloc(RAND_STR_SIZE*sizeof(char*));
   char *c = (char*)malloc(2*sizeof(char*));
   while(1)
@@ -35,10 +34,13 @@ void testing()
       if (fd == -1)
         err(1, "Error opening file");
       read(fd, c, 2*sizeof(char));
-      read(fd, k, RAND_STR_SIZE);
-      printf("%c + %d\n", c[0], strlen(k));
-      if (strlen(k) == 1)
+      // k = "";
+      printf("%c", c[0]);
+      if (!read(fd, k, RAND_STR_SIZE))
+      {
+        printf("\n");
         exit(0);
+      }
       s = k;
     }
   }
