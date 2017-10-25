@@ -1,17 +1,2 @@
-INDEX VERSION 1.129+/afs/ms.mff.cuni.cz/u/n/nagylas/workspace/.metadata/.plugins/org.eclipse.jdt.core
-1148683456.index
-4013735022.index
-1687352740.index
-3535603673.index
-504299895.index
-2924704402.index
-409242175.index
-2203336265.index
-3105762542.index
-1547744356.index
-93882924.index
-1885052527.index
-1601970724.index
-766833804.index
-3329908449.index
-660076668.index
+INDEX VERSION 1.129+/afs/ms.mff.cuni.cz/u/n/nagylas/lib/workspace/.metadata/.plugins/org.eclipse.jdt.core
+818186891.index
