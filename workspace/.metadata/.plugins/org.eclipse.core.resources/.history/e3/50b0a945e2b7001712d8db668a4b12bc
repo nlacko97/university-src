@@ -1,0 +1,12 @@
+package iterator;
+
+public class Car {
+	public String name;
+	public int wheels;
+	
+	public Car(String name, int wheels)
+	{
+		this.name = name;
+		this.wheels = wheels;
+	}
+}

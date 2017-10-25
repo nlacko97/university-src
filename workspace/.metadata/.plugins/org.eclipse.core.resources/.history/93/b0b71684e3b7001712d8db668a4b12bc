@@ -1,0 +1,18 @@
+package iterator;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MyCollectionImp list = new MyCollectionImp();
+		
+		list.add(new Car("BMW"));
+		list.add(new Car("VW"));
+		list.add(new Car("Lada"));
+		while(list.iterator().hasNext())
+		{
+			System.out.println(list.iterator().next());
+		}
+	}
+
+}
