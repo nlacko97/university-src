@@ -17,7 +17,7 @@ public class CharCount {
 		int length = input.length() + 1;
 		
 		System.out.println("Length of string is " + length + " characters");
-
+			
 	}
 
 }
