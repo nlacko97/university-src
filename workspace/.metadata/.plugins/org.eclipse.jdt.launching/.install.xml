@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <dirs>
-<entry loc="/opt/oracle-jdk-bin-1.8.0.144" stamp="1501441510000"/>
+    <entry loc="C:\Program Files\Java\jre-9.0.1" stamp="1508962592795"/>
+    <entry loc="/opt/oracle-jdk-bin-1.8.0.144" stamp="1501441510000"/>
 </dirs>
