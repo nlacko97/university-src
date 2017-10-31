@@ -15,11 +15,11 @@ int main(int argc, char *argv[]) {
     switch(opt) {
       case 'a': {
         flagA = 1;
-        printf("option a\n");
+        //printf("option a\n");
       }break;
       case 'o': {
         flagO = 1;
-        printf("opt b\n");
+        //printf("opt b\n");
       }break;
       default: {
         printf("Bad option\n");
@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
     err(1, "Too many options set!");
   }
   else if (flagA) {
-    for(int i = 0; i < argc && isSet; i++) {
+    for(int i = 0; i < argc; i++) {
       if (!getenv(argv[i])) {
         return 0;
       }

@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <err.h>
 #include <ctype.h>
+#include <errno.h>
 
 #define BUFSIZE 256
 
@@ -45,7 +46,7 @@ int main(int argc, char* argv[]) {
     char *i; // input file name
     char *o; // output file name
   }flags;
-  flags.o = (char*)malloc(BUFSIZE*(sizeof(char*)));
+
   while((opt = getopt(argc, argv, "i:o:x:")) != -1) {
     switch(opt) {
       case 'x': {
@@ -67,7 +68,7 @@ int main(int argc, char* argv[]) {
 
   int fd = open(flags.i, O_RDONLY), fd2;
   if (fd == -1) {
-    err(1, "Couldn't open file %s", flags.i);
+    err(errno, "Couldn't open file %s", flags.i);
   }
 
   char *buf = (char*)malloc(BUFSIZE*(sizeof(char*)));
@@ -75,7 +76,7 @@ int main(int argc, char* argv[]) {
   if (strcmp(flags.o, "")) {
     fd2 = open(flags.o, O_WRONLY | O_CREAT, 0666);
     if (fd2 == -1) {
-      err(1, "Couldn't open file %s", flags.o);
+      err(errno, "Couldn't open file %s", flags.o);
     }
   }
 
@@ -95,6 +96,8 @@ int main(int argc, char* argv[]) {
     }
   }
 
+  close(fd);
+  close(fd2);
 
   exit(0);
 }

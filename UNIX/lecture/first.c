@@ -7,18 +7,21 @@
 int main(int argc, char* argv[])
 {
 	struct passwd *pwd;
+
 	uid_t uid = getuid();
+	// pwd = getpwnam("udvarhet");
 	pwd = getpwuid(uid);
+
 	if (pwd)
-		printf("Home dir: %s\n", pwd->pw_dir);
-	
-	int bufsize = 256;
-	char *buf = malloc(bufsize);
+		printf("Home dir: %s\nName: %s\n", pwd->pw_dir, pwd->pw_name);
+
 	setpwent();
+
 	while((pwd = getpwent()) != NULL)
 	{
-	//	printf("Username: %s\n", pwd->pw_name);
+		//printf("%s\n", pwd->pw_name);
 	}
+
 	endpwent();
 
 }
