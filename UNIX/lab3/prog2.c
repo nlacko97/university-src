@@ -18,7 +18,7 @@
           .
           .
 
-  * TODO write the testing shell script in C
+  * DONE write the testing shell script in C
 */
 
 void testing()
