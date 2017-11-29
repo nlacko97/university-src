@@ -27,16 +27,13 @@ int main(int argc, char* argv[])
       err(1, "Fork error");
     case 0:
       sem_wait(sem);
-      //write(1, "I'm the child\n", 15);
       printf("I'm the child\n");
       break;
     default:
-      //write(1, "Parent sleeping...\n", 19);
       printf("Parent sleeping\n");
       sleep(3);
-      sem_post(sem);
-      //write(1, "Parent posting...\n", 18);
       printf("Parent posting\n");
+      sem_post(sem);
       sem_close(sem);
   }
 }

@@ -36,7 +36,7 @@
        case -1:
         err(1, "Error with fork");
        case 0:
-         seconds = getRandomNumber(0, 5);
+         seconds = getRandomNumber(0, 5 + i);
          char *sec = (char*)malloc(2);
          sprintf(sec, "%d", seconds);
          printf("%d. child sleeping for %s seconds...\n", i, sec);
@@ -45,6 +45,7 @@
          break;
      }
    }
+
    int pid;
    for(int i = 0; i < n; ++i)
    {
