@@ -1,0 +1,4 @@
+3 walk
+4 sleep
+1 eat
+2 program
