@@ -8,7 +8,7 @@ public class Justify {
 		if (line.length() == n)
 			return line;
 		boolean done = false;
-		
+		boolean addedSpace = false;
 		while(!done) {
 			for(int i = 0; i < line.length() && !done; i++) {
 				if (Character.isWhitespace(line.charAt(i))) {
@@ -16,20 +16,21 @@ public class Justify {
 					cpy += " ";
 					cpy += line.substring(i, line.length());
 					line = cpy;
-					i++;
+					addedSpace = true;
+					while(Character.isWhitespace(line.charAt(i))) i++;
 					if (line.length() == n)
 						done = true;
 				}
 			}
+			if (!addedSpace)
+				return line;
 		}
 		
 		return line;
 	}
 	
 	public static void main(String args[])
-	{
-		System.out.println("Reading input:");
-		
+	{	
 		Reader reader = new BufferedReader(new InputStreamReader(System.in));
 		
 		int r;
@@ -37,36 +38,80 @@ public class Justify {
 		try {
 			
 			String num = "";
-			while((r = reader.read()) != 10) {
+			while((r = reader.read()) != 10 && r != -1) {
 				num += (char)r;
 			}
 			
 			int n = Integer.parseInt(num);
 			
-			String line = "";
-			System.out.println(line.length());
-			int position;
 			boolean readEnough = false;
-			while(!readEnough) {
-				String word = "";
-				while(Character.isWhitespace((char)(r = reader.read())));
-				while(!Character.isWhitespace((char)r)) {
-					//System.out.println((char)r);
-					word += (char)r;
-					r = reader.read();
-				}
-				if (line.length() + word.length() <= 50 && word.length() > 0)
+			boolean newLine = false;
+			int newL = 0;
+			String line = "";
+			String word = "";
+			while(!readEnough)
+			{
+				line = word;
+				if (line.length() > n)
 				{
-					if (line.length() > 0)
-						line += " " + word;
-					else
-						line += word;
+					word = "";
 					continue;
 				}
-				readEnough = true;
+ 				boolean readEnoughLine = false;
+				while(!readEnoughLine) {
+					word = "";
+					while(Character.isWhitespace((char)(r = reader.read())))
+					{
+						if (r == 10 || r == -1)
+						{
+							newLine = true;
+							break;
+						}
+					}
+					while(!Character.isWhitespace((char)r) && r != -1) {
+						word += (char)r;
+						r = reader.read();
+					}
+					if (r == -1)
+						{
+							newLine = true;
+							readEnough = true;
+						}
+					if (line.length() + word.length() < n && word.length() > 0)
+					{
+						if (line.length() > 0)
+							line += " " + word;
+						else
+							line += word;
+						continue;
+					}
+					readEnoughLine = true;
+				}
+				if (word.length() > n)
+				{
+					line = justifyLine(line, n);
+					System.out.println(line);
+					System.out.println(word);
+					word = "";
+					continue;
+				}
+				if (newLine)
+				{
+					newLine = false;
+					if (line.length() > 0)
+						System.out.println(line);
+					if (r != -1 && newL == 0)
+					{
+						newL++;
+						System.out.println("");
+					}
+					continue;
+				}
+				if (newL > 0)
+					newL = 0;
+				line = justifyLine(line, n);
+				System.out.println(line);
 			}
-			line = justifyLine(line, n);
-			System.out.println(line);
 			
 			
 			
