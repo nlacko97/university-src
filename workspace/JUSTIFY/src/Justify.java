@@ -90,7 +90,8 @@ public class Justify {
 				if (word.length() > n)
 				{
 					line = justifyLine(line, n);
-					System.out.println(line);
+					if (line.length() > 0)
+						System.out.println(line);
 					System.out.println(word);
 					word = "";
 					continue;
@@ -100,6 +101,8 @@ public class Justify {
 					newLine = false;
 					if (line.length() > 0)
 						System.out.println(line);
+					if (word.length() > 0)
+						System.out.println(word);
 					if (r != -1 && newL == 0)
 					{
 						newL++;
@@ -110,7 +113,8 @@ public class Justify {
 				if (newL > 0)
 					newL = 0;
 				line = justifyLine(line, n);
-				System.out.println(line);
+				if (line.length() > 0)
+					System.out.println(line);
 			}
 			
 			
@@ -118,7 +122,7 @@ public class Justify {
 		}
 		catch(Exception e)
 		{
-			System.out.print("Error");
+			System.out.println("Error");
 		}
 		
 	}
