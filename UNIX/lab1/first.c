@@ -44,9 +44,9 @@ int main(int argc, char* argv[])
 	// print all arguments
 	for(int i = 1; i < argc; i++)
 		printf("\t\t%d.: %s\n", i, argv[i]);
-	printf("\n\tArguments in reverse order:\n");
 
 	// print arguments in reverse order
+	printf("\n\tArguments in reverse order:\n");
 	for(int i = argc - 1; i > 0; i--)
 		printf("\t\t%d.: %s\n", i, argv[i]);
 	printf("\n");

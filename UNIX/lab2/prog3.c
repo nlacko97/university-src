@@ -46,7 +46,7 @@ int main(int argc, char* argv[]) {
     char *i; // input file name
     char *o; // output file name
   }flags;
-
+  flags.o = "";
   while((opt = getopt(argc, argv, "i:o:x:")) != -1) {
     switch(opt) {
       case 'x': {
@@ -55,13 +55,14 @@ int main(int argc, char* argv[]) {
         else if (!strcmp(optarg, "A"))
           flags.x = 2;
         else
-          err(1, "%s", optarg);
+          err(1, "Invaild option - %s", optarg);
       }break;
       case 'i': {
         flags.i = strdup(optarg);
       }break;
       case 'o': {
         flags.o = strdup(optarg);
+        printf("%s\n", flags.o);
       }
     }
   }
