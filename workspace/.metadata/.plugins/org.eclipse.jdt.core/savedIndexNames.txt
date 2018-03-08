@@ -1,2 +1,5 @@
-INDEX VERSION 1.129+/afs/ms.mff.cuni.cz/u/n/nagylas/lib/workspace/.metadata/.plugins/org.eclipse.jdt.core
-1014929708.index
+INDEX VERSION 1.130+C:\Users\nagyl\Documents\uni\workspace\.metadata\.plugins\org.eclipse.jdt.core
+213397166.index
+1343171193.index
+4267283917.index
+3384513373.index

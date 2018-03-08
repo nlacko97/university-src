@@ -2,6 +2,18 @@ package jsonparser;
 
 import java.util.Map;
 
+/*
+
+	The program should connect to the given URL and read the contents of the page.
+
+	The parse function should parse the JSON string and store it.
+	The JSON file contains key-value pairs. Values can be strings("s"), numbers(42) and other objects({})
+	Objects should be stored in maps(Map<String, Object>).
+	The name of the city is given by parameter.
+	The below main program should print the temperature acquired from the JSON object.
+
+*/
+
 public class Main {
 
 	@SuppressWarnings("unchecked")
