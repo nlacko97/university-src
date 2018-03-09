@@ -1,0 +1,31 @@
+
+*** These modified files were found in JOE when it aborted on Thu Mar  8 07:18:34 2018
+*** JOE was aborted by UNIX signal 1
+
+*** File '/home/nlacko97/Documents/university-src/.git/MERGE_MSG'
+
+
+Merge branch 'master' of https://github.com/nlacko97/university-src
+
+# Please enter a commit message to explain why this merge is necessary,
+# especially if it merges an updated upstream into a topic branch.
+#
+# Lines starting with '#' will be ignored, and an empty message aborts
+# the commit.
+
+*** File '(Unnamed)'
+feladatlap_linux.jpg
+feladatlap_linux
+feladatlap_linux~
+feladat
+feladatlap_linux
+feladatlap_linux
+2_10_parancsok
+2_10_parancsok
+/home/nlacko97/Documents/university-src/.git/MERGE_MSG
+
+*** File '* Startup Log *'
+Processing '/etc/joe/editorrc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/editorrc
