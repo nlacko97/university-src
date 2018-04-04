@@ -13,6 +13,11 @@ public class Server implements Runnable {
 	private List<String> ContactList = null;
 	private List<ServerThread> RunningThreads = null;
 	
+//	private List<Correspondence> history = null;
+//	
+//	public List<Correspondence> getHistory() {return this.history;}
+//	public void setHistory(List<Correspondence> h) { this.history = h; }
+	
 	private void initContactList()
 	{
 		ContactList = new ArrayList<String>();
@@ -31,6 +36,7 @@ public class Server implements Runnable {
 	{
 		initContactList();
 		RunningThreads = new ArrayList<>();
+//		history = new ArrayList<>();
 		try
 		{
 			System.out.println("Server binding to port " + portNumber);
@@ -83,7 +89,7 @@ public class Server implements Runnable {
 		}
 		catch(Exception e)
 		{
-			System.out.println("Error starting thread");
+			System.out.println("Error starting thread " + e);
 		}
 		
 	}
@@ -111,6 +117,7 @@ public class Server implements Runnable {
 	{
 		System.out.println(msg);
 		ServerThread sender = getClient(msg.getSender());
+		
 		if (!validate(msg.getTarget()))
 		{
 			sender.send(new Message("server", msg.getSender(), "Invalid correspondece"));
@@ -118,11 +125,13 @@ public class Server implements Runnable {
 		else
 		{
 			ServerThread target = getClient(msg.getTarget());
-			if (target == null)
+			if (target != null)
 			{
-				//add to correspondence history :)
+				target.send(msg);
 			}
-			target.send(msg);
+//			c.history.add(msg);
+//			history.set(history.indexOf(c), c);
+//			System.out.println("new history: " + history.get(history.indexOf(c)).history);
 		}
 	}
 	
@@ -135,6 +144,7 @@ public class Server implements Runnable {
 		try {
 			t.close();
 		} catch (IOException e) {
+			System.out.println("\t" + e);
 			e.printStackTrace();
 		}
 		System.out.println(RunningThreads);

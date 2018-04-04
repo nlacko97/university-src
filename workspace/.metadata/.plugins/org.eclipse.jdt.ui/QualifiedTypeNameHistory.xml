@@ -25,4 +25,5 @@
     <fullyQualifiedTypeName name="java.io.Serializable"/>
     <fullyQualifiedTypeName name="javax.swing.event.ListSelectionListener"/>
     <fullyQualifiedTypeName name="javax.swing.event.ListSelectionEvent"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

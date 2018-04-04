@@ -1,23 +1,26 @@
 package whatsapp;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Correspondence {
+public class Correspondence implements Serializable {
 
-	private String[] participants;
-	private List<Message> history = null;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6024279751597062224L;
+	public List<String> participants = null;
+	public List<Message> history = null;
 	
-	public Correspondence(String ... participants)
+	public Correspondence(ArrayList<String> p)
 	{
-		int i = 0;
-		for(String s : participants)
-			this.participants[i++] = s;
+		this.participants = p;
 		history = new ArrayList<>();
 	}
 	
-	public void addToHistory(Message msg)
+	public String toString()
 	{
-		history.add(msg);
+		return participants + " - " + history.size();
 	}
 	
 }

@@ -1,0 +1,12 @@
+C:\Users\nagyl\Documents\uni\Databases\Basketball\Basketball\bin\Debug\Basketball.exe.config
+C:\Users\nagyl\Documents\uni\Databases\Basketball\Basketball\bin\Debug\Basketball.exe
+C:\Users\nagyl\Documents\uni\Databases\Basketball\Basketball\bin\Debug\Basketball.pdb
+C:\Users\nagyl\Documents\uni\Databases\Basketball\Basketball\obj\Debug\Basketball.csprojResolveAssemblyReference.cache
+C:\Users\nagyl\Documents\uni\Databases\Basketball\Basketball\obj\Debug\Basketball.Properties.Resources.resources
+C:\Users\nagyl\Documents\uni\Databases\Basketball\Basketball\obj\Debug\Basketball.csproj.GenerateResource.cache
+C:\Users\nagyl\Documents\uni\Databases\Basketball\Basketball\obj\Debug\Basketball.csproj.CoreCompileInputs.cache
+C:\Users\nagyl\Documents\uni\Databases\Basketball\Basketball\obj\Debug\Basketball.exe
+C:\Users\nagyl\Documents\uni\Databases\Basketball\Basketball\obj\Debug\Basketball.pdb
+C:\Users\nagyl\Documents\uni\Databases\Basketball\Basketball\obj\Debug\Basketball.LoginForm.resources
+C:\Users\nagyl\Documents\uni\Databases\Basketball\Basketball\obj\Debug\Basketball.MenuForm.resources
+C:\Users\nagyl\Documents\uni\Databases\Basketball\Basketball\obj\Debug\Basketball.RegisterForm.resources

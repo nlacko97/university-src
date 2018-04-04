@@ -1,0 +1,3 @@
+﻿  BuvosNegyzet.cpp
+c:\users\nagyl\documents\uni\artificialintelligence\buvosnegyzet\buvosnegyzet\buvosnegyzet.cpp(32): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  BuvosNegyzet.vcxproj -> C:\Users\nagyl\Documents\uni\ArtificialIntelligence\BuvosNegyzet\Debug\BuvosNegyzet.exe

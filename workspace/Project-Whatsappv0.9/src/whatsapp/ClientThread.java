@@ -48,6 +48,11 @@ public class ClientThread extends Thread {
 		}
 	}
 	
+	public void doSleep(int sec) throws InterruptedException
+	{
+		Thread.sleep(sec);
+	}
+	
 	public void run()
 	{
 		try
@@ -63,12 +68,26 @@ public class ClientThread extends Thread {
 		{
 			try
 			{
-				client.handleMessage((Message) input.readObject());
+				if (!client.closed())
+				{
+					Object rec = input.readObject();
+//					if (rec instanceof Correspondence)
+//					{
+//						Correspondence c = (Correspondence)rec;
+//						System.out.println("Setting correspondence to " + c.participants + " wit history: " + c.history);
+//						client.setCorrespondence((Correspondence) rec);
+//					}
+//					else if (rec instanceof Message)
+					{
+						client.handleMessage((Message)rec);
+					}
+					
+				}
 			}
 			catch(Exception e)
 			{
-				System.out.println("Error with message: " + e);
-				client.stop();
+				//System.out.println("Error with message: " + e);
+				//client.stop();
 			}
 		}
 	}
